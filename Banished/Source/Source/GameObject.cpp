@@ -20,10 +20,35 @@ void GameObject::onEvent(sf::Event & event)
 		handleKeyReleasedEvent(event.key);
 }
 
+bool GameObject::init()
+{
+	return true;
+}
+
 void GameObject::render(sf::RenderWindow * window)
 {
 }
 
 void GameObject::update(sf::RenderWindow * window, float deltaTime)
+{
+}
+
+void GameObject::release()
+{
+}
+
+void GameObject::handleWindowCloseEvent()
+{
+}
+
+void GameObject::handleWindowSizeEvent(sf::Event::SizeEvent & event)
+{
+}
+
+void GameObject::handleKeyPressedEvent(sf::Event::KeyEvent & event)
+{
+}
+
+void GameObject::handleKeyReleasedEvent(sf::Event::KeyEvent & event)
 {
 }

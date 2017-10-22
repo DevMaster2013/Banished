@@ -2,24 +2,29 @@
 
 #include <SFML\Graphics.hpp>
 #include <SFML\System.hpp>
-#include "Camera.h"
+#include <unordered_map>
+#include <string>
+#include "GameObject.h"
 
 class Game
 {
 private:
+	typedef std::unordered_map<std::string, GameObject*> GameObjectList;
+
+private:
 	sf::RenderWindow*	_renderWindow;	
 	sf::Thread*			_renderThread;
 	sf::Thread*			_updateThread;
-	sf::CircleShape		_playerShip;
-
-	Camera				_cameraView;
+	GameObjectList		_gameObjects;
 
 public:
 	Game();
 	~Game();
 
 public:
+	bool init();
 	void run();
+	void release();
 
 private:
 	void handleEvents();

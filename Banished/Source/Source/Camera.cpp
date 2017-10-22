@@ -7,7 +7,6 @@ Camera::Camera()
 
 Camera::Camera(float width, float height)
 	: _cameraView(sf::View(sf::FloatRect(0.0f, 0.0f, width, height)))
-	, _cameraMovement(0.0f, 0.0f)
 	, _cameraMovementSpeed(100.0f)
 {
 }
@@ -32,38 +31,25 @@ void Camera::render(sf::RenderWindow * window)
 
 void Camera::update(sf::RenderWindow * window, float deltaTime)
 {
-	_cameraView.move(_cameraMovement * deltaTime * _cameraMovementSpeed);
-}
-
-void Camera::handleWindowCloseEvent()
-{
+	handleCameraMovement(deltaTime);
 }
 
 void Camera::handleWindowSizeEvent(sf::Event::SizeEvent & event)
 {
 	_cameraView.setSize((float)event.width, (float)event.height);
+	GameObject::handleWindowSizeEvent(event);
 }
 
-void Camera::handleKeyPressedEvent(sf::Event::KeyEvent & event)
+void Camera::handleCameraMovement(float deltaTime)
 {
-	if (event.code == sf::Keyboard::Key::Up)
-		_cameraMovement.y = 1.0f;
-	if (event.code == sf::Keyboard::Key::Down)
-		_cameraMovement.y = -1.0f;
-	if (event.code == sf::Keyboard::Key::Left)
-		_cameraMovement.x = 1.0f;
-	if (event.code == sf::Keyboard::Key::Right)
-		_cameraMovement.x = -1.0f;
-}
-
-void Camera::handleKeyReleasedEvent(sf::Event::KeyEvent & event)
-{
-	if (event.code == sf::Keyboard::Key::Up)
-		_cameraMovement.y = 0.0f;
-	if (event.code == sf::Keyboard::Key::Down)
-		_cameraMovement.y = 0.0f;
-	if (event.code == sf::Keyboard::Key::Left)
-		_cameraMovement.x = 0.0f;
-	if (event.code == sf::Keyboard::Key::Right)
-		_cameraMovement.x = 0.0f;
+	sf::Vector2f movement(0.0f, 0.0f);
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+		movement.y += 1;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+		movement.y -= 1;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+		movement.x += 1;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		movement.x -= 1;
+	_cameraView.move(movement * deltaTime * _cameraMovementSpeed);
 }

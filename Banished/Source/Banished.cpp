@@ -3,7 +3,11 @@
 int main(int argc, char** argv)
 {
 	Game banishedGame;
-	banishedGame.run();
+
+	if (banishedGame.init())
+		banishedGame.run();
+
+	banishedGame.release();
 
 	return 0;
 }

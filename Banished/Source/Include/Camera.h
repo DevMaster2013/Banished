@@ -5,15 +5,13 @@
 class Camera : public GameObject
 {
 private:
-	sf::View _cameraView;
-
-	sf::Vector2f	_cameraMovement;
-	float			_cameraMovementSpeed;
+	sf::View	_cameraView;
+	float		_cameraMovementSpeed;
 
 public:
 	Camera();
 	Camera(float width, float height);
-	~Camera();
+	virtual ~Camera();
 
 public:
 	const sf::View& getView() const;
@@ -24,8 +22,8 @@ public:
 	virtual void update(sf::RenderWindow* window, float deltaTime) override;
 
 protected:
-	virtual void handleWindowCloseEvent() override;
 	virtual void handleWindowSizeEvent(sf::Event::SizeEvent & event) override;
-	virtual void handleKeyPressedEvent(sf::Event::KeyEvent & event) override;
-	virtual void handleKeyReleasedEvent(sf::Event::KeyEvent & event) override;
+
+private:
+	void handleCameraMovement(float deltaTime);
 };
