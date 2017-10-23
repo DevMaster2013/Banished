@@ -2,8 +2,8 @@
 
 #include <string>
 #include <unordered_map>
-#include "GameObject.h"
-#include "GameEntity.h"
+#include "Framework\GameObject.h"
+#include "Framework\GameEntity.h"
 
 class GameWorld : public GameEntity
 {
@@ -11,11 +11,9 @@ public:
 	GameWorld();
 	virtual ~GameWorld();
 
-public:
-	virtual bool init() override;
-	virtual void release() override;
-
 protected:
+	virtual bool onEntityInit() override;
+	virtual void onEntityRelease() override;
 	virtual void onEntityRender(sf::RenderWindow* window);
 	virtual void onEntityUpdate(sf::RenderWindow* window, float deltaTime);
 };

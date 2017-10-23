@@ -4,7 +4,7 @@
 #include <SFML\System.hpp>
 #include <unordered_map>
 #include <string>
-#include "GameObject.h"
+#include "Framework\GameObject.h"
 
 class Game
 {

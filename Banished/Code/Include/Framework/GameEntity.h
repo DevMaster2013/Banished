@@ -5,14 +5,15 @@
 #include <unordered_map>
 #include "GameObject.h"
 
-class GameEntity : public GameObject, sf::Transformable
+class GameEntity : public GameObject, public sf::Transformable
 {
 protected:
 	typedef std::unordered_map<std::string, GameEntity*> ChildList;
 
 protected:
-	sf::Texture		_entityTexture;
+	sf::Texture*	_entityTexture;
 	sf::Sprite		_entirySprite;
+	sf::IntRect		_textureRect;
 
 protected:
 	GameEntity*		_parentEntity;
@@ -30,14 +31,17 @@ public:
 	virtual void update(sf::RenderWindow* window, float deltaTime) override;
 
 public:
-	void addChild(const std::string name, GameEntity* child);
+	GameEntity* addChild(const std::string name, GameEntity* child);
 
 public:
 	void setParent(GameEntity* parent);
-	void setTexture(const sf::Texture& texture);
+	void setTexture(sf::Texture* texture);
+	void setTextureRect(sf::IntRect textureRect);
 	sf::Transform getEntityTransform() const;
 
 protected:
+	virtual bool onEntityInit();
 	virtual void onEntityRender(sf::RenderWindow* window);
 	virtual void onEntityUpdate(sf::RenderWindow* window, float deltaTime);
+	virtual void onEntityRelease();
 };

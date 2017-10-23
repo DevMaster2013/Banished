@@ -1,20 +1,92 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="Source\Include\Game.h" />
-    <ClInclude Include="Source\Include\GameObject.h" />
-    <ClInclude Include="Source\Include\Camera.h" />
-    <ClInclude Include="Source\Include\GameWorld.h" />
-    <ClInclude Include="Source\Include\GameEntity.h" />
-    <ClInclude Include="Source\Include\TestingCircleEntity.h" />
+    <ClInclude Include="Code\Include\Framework\Camera.h">
+      <Filter>Include\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Include\Framework\GameEntity.h">
+      <Filter>Include\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Include\Framework\GameObject.h">
+      <Filter>Include\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Include\Game\Game.h">
+      <Filter>Include\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Include\Game\GameWorld.h">
+      <Filter>Include\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Include\Logic\Map.h">
+      <Filter>Include\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Include\Logic\Tile.h">
+      <Filter>Include\Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Include\Game\MapEntity.h" />
+    <ClInclude Include="Code\Include\Framework\SpriteSheet.h" />
+    <ClInclude Include="Code\Include\Resources\TerrainSpriteSheet.h" />
+    <ClInclude Include="Code\Include\Game\GameConstants.h" />
+    <ClInclude Include="Code\Include\Game\GameUtilities.h" />
+    <ClInclude Include="Code\Include\Resources\ResourceManager.h" />
+    <ClInclude Include="Code\Include\Resources\TextureResourceManager.h" />
+    <ClInclude Include="Code\Include\Resources\SpriteSheetResourceManager.h" />
+    <ClInclude Include="Code\Include\Resources\GameResources.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Banished.cpp" />
-    <ClCompile Include="Source\Source\Game.cpp" />
-    <ClCompile Include="Source\Source\GameObject.cpp" />
-    <ClCompile Include="Source\Source\Camera.cpp" />
-    <ClCompile Include="Source\Source\GameWorld.cpp" />
-    <ClCompile Include="Source\Source\GameEntity.cpp" />
-    <ClCompile Include="Source\Source\TestingCircleEntity.cpp" />
+    <ClCompile Include="Code\Banished.cpp" />
+    <ClCompile Include="Code\Source\Framework\Camera.cpp">
+      <Filter>Source\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Source\Framework\GameEntity.cpp">
+      <Filter>Source\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Source\Framework\GameObject.cpp">
+      <Filter>Source\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Source\Game\GameWorld.cpp">
+      <Filter>Source\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Source\Game\Game.cpp">
+      <Filter>Source\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Source\Logic\Map.cpp">
+      <Filter>Source\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Source\Logic\Tile.cpp">
+      <Filter>Source\Logic</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Source\Game\MapEntity.cpp" />
+    <ClCompile Include="Code\Source\Framework\SpriteSheet.cpp" />
+    <ClCompile Include="Code\Source\Resources\TerrainSpriteSheet.cpp" />
+    <ClCompile Include="Code\Source\Resources\TextureResourceManager.cpp" />
+    <ClCompile Include="Code\Source\Resources\SpriteSheetResourceManager.cpp" />
+    <ClCompile Include="Code\Source\Resources\GameResources.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{334f0c24-6676-4b76-84b6-8cd723308940}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{7cddb8af-eb60-488e-be09-fc271b320fa9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Framework">
+      <UniqueIdentifier>{dc5da91e-5f72-47d6-858f-667eec3d5a76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Game">
+      <UniqueIdentifier>{9b8690d4-38f2-4908-910c-dbf304d11c4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Framework">
+      <UniqueIdentifier>{4a255e92-06fa-41d2-8c15-c717fbcc749c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Game">
+      <UniqueIdentifier>{482abc33-a534-4e35-beaa-38577e41e566}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Logic">
+      <UniqueIdentifier>{d41bbfe4-d0d5-42a1-919b-cc159a1641f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Logic">
+      <UniqueIdentifier>{217fa06c-093f-4817-a9c3-4cd54e7b8256}</UniqueIdentifier>
+      <Extensions>Code\Include\Logic\*.h</Extensions>
+    </Filter>
   </ItemGroup>
 </Project>

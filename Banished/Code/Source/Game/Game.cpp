@@ -1,6 +1,7 @@
-#include "..\Include\Game.h"
-#include "..\Include\Camera.h"
-#include "..\Include\GameWorld.h"
+#include "Game\Game.h"
+#include "Game\GameWorld.h"
+#include "Framework\Camera.h"
+#include "Resources\GameResources.h"
 
 Game::Game()
 	: _renderWindow(nullptr)
@@ -17,6 +18,8 @@ Game::~Game()
 
 bool Game::init()
 {
+	GameResources::loadGameResources();
+
 #ifdef _DEBUG
 	_renderWindow = new sf::RenderWindow(sf::VideoMode(800, 600), "Banished");
 #else
@@ -59,6 +62,8 @@ void Game::release()
 		delete gameObject.second;
 	_gameObjects.clear();
 	delete _renderWindow;
+
+	GameResources::releaseGameResources();
 }
 
 void Game::handleEvents()

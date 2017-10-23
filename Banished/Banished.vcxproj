@@ -22,7 +22,7 @@
     <ProjectGuid>{C4E21D9D-3E69-4831-B335-60163833F210}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Banished</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -89,7 +89,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>SFML_STATIC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>Third Party\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Third Party\SFML-2.4.2\include;Code\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -106,7 +106,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>SFML_STATIC;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>Third Party\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Third Party\SFML-2.4.2\include;Code\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -125,7 +125,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>SFML_STATIC;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>Third Party\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Third Party\SFML-2.4.2\include;Code\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,7 +146,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>SFML_STATIC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>Third Party\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Third Party\SFML-2.4.2\include;Code\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -158,21 +158,38 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Include\Camera.h" />
-    <ClInclude Include="Source\Include\Game.h" />
-    <ClInclude Include="Source\Include\GameEntity.h" />
-    <ClInclude Include="Source\Include\GameObject.h" />
-    <ClInclude Include="Source\Include\GameWorld.h" />
-    <ClInclude Include="Source\Include\TestingCircleEntity.h" />
+    <ClInclude Include="Code\Include\Framework\Camera.h" />
+    <ClInclude Include="Code\Include\Framework\SpriteSheet.h" />
+    <ClInclude Include="Code\Include\Game\Game.h" />
+    <ClInclude Include="Code\Include\Framework\GameEntity.h" />
+    <ClInclude Include="Code\Include\Framework\GameObject.h" />
+    <ClInclude Include="Code\Include\Game\GameConstants.h" />
+    <ClInclude Include="Code\Include\Game\GameUtilities.h" />
+    <ClInclude Include="Code\Include\Game\GameWorld.h" />
+    <ClInclude Include="Code\Include\Game\MapEntity.h" />
+    <ClInclude Include="Code\Include\Logic\Map.h" />
+    <ClInclude Include="Code\Include\Logic\Tile.h" />
+    <ClInclude Include="Code\Include\Resources\GameResources.h" />
+    <ClInclude Include="Code\Include\Resources\ResourceManager.h" />
+    <ClInclude Include="Code\Include\Resources\SpriteSheetResourceManager.h" />
+    <ClInclude Include="Code\Include\Resources\TerrainSpriteSheet.h" />
+    <ClInclude Include="Code\Include\Resources\TextureResourceManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Banished.cpp" />
-    <ClCompile Include="Source\Source\TestingCircleEntity.cpp" />
-    <ClCompile Include="Source\Source\Camera.cpp" />
-    <ClCompile Include="Source\Source\Game.cpp" />
-    <ClCompile Include="Source\Source\GameEntity.cpp" />
-    <ClCompile Include="Source\Source\GameObject.cpp" />
-    <ClCompile Include="Source\Source\GameWorld.cpp" />
+    <ClCompile Include="Code\Banished.cpp" />
+    <ClCompile Include="Code\Source\Game\MapEntity.cpp" />
+    <ClCompile Include="Code\Source\Framework\Camera.cpp" />
+    <ClCompile Include="Code\Source\Game\Game.cpp" />
+    <ClCompile Include="Code\Source\Framework\GameEntity.cpp" />
+    <ClCompile Include="Code\Source\Framework\GameObject.cpp" />
+    <ClCompile Include="Code\Source\Game\GameWorld.cpp" />
+    <ClCompile Include="Code\Source\Logic\Map.cpp" />
+    <ClCompile Include="Code\Source\Logic\Tile.cpp" />
+    <ClCompile Include="Code\Source\Framework\SpriteSheet.cpp" />
+    <ClCompile Include="Code\Source\Resources\GameResources.cpp" />
+    <ClCompile Include="Code\Source\Resources\SpriteSheetResourceManager.cpp" />
+    <ClCompile Include="Code\Source\Resources\TerrainSpriteSheet.cpp" />
+    <ClCompile Include="Code\Source\Resources\TextureResourceManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

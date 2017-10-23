@@ -1,4 +1,4 @@
-#include "..\Include\Camera.h"
+#include "Framework\Camera.h"
 
 Camera::Camera()
 	: Camera(800.0f, 600.0f)
@@ -44,12 +44,12 @@ void Camera::handleCameraMovement(float deltaTime)
 {
 	sf::Vector2f movement(0.0f, 0.0f);
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-		movement.y += 1;
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 		movement.y -= 1;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+		movement.y += 1;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-		movement.x += 1;
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 		movement.x -= 1;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+		movement.x += 1;
 	_cameraView.move(movement * deltaTime * _cameraMovementSpeed);
 }
